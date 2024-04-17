@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "JetBrains Mono:pixelsize=16:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 /* Spare fonts */
 
@@ -238,7 +238,7 @@ static MouseShortcut mshortcuts[] = {
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
 	"xurls | dmenu -l 10 -w $WINDOWID | xargs -r open",
-	"externalpipe", NULL };
+  "externalpipe", NULL };
 
 static char *setbgcolorcmd[] = { "/bin/sh", "-c",
 	"printf '\033]11;#008000\007'",
@@ -248,17 +248,17 @@ static Shortcut shortcuts[] = {
 	/* mask                 keysym          function         argument   screen */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,       {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,   {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,     {.i =  0} },
+  { ShiftMask,            XK_Print,       printscreen,     {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,        {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,            {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,            {.f = -1} },
+  { TERMMOD,              XK_J,           zoom,            {.f = +1} },
+	{ TERMMOD,              XK_K,           zoom,            {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,       {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,        {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,       {.i =  0} },
+  { TERMMOD,              XK_C,           clipcopy,        {.i =  0} },
+  { TERMMOD,              XK_V,           clippaste,       {.i =  0} },
 	{ TERMMOD,              XK_O,           changealpha,     {.f = +0.05} },
 	{ TERMMOD,              XK_P,           changealpha,     {.f = -0.05} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,       {.i = -1}, S_PRI },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = -1}, S_PRI },
+  { ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = -1}, S_PRI },
 	{ TERMMOD,              XK_Y,           selpaste,        {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,        {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,         {.i =  0} },
